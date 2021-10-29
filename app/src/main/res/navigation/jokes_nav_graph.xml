@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/jokes_nav_graph"
+    app:startDestination="@id/jokesFragment">
+
+    <fragment
+        android:id="@+id/jokesFragment"
+        android:name="com.example.chucknorris.ui.fragments.JokesFragment"
+        android:label="Jokes" >
+        <action
+            android:id="@+id/action_jokesFragment_to_jokeFragment"
+            app:destination="@id/jokeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/savedJokesFragment"
+        android:name="com.example.chucknorris.ui.fragments.SavedJokesFragment"
+        android:label="Saved Jokes" />
+    <fragment
+        android:id="@+id/webFragment"
+        android:name="com.example.chucknorris.ui.fragments.WebFragment"
+        android:label="Web" />
+    <fragment
+        android:id="@+id/jokeFragment"
+        android:name="com.example.chucknorris.ui.fragments.JokeFragment"
+        android:label="JokeFragment" >
+        <argument
+            android:name="joke"
+            app:argType="com.example.chucknorris.model.Value" />
+    </fragment>
+</navigation>
